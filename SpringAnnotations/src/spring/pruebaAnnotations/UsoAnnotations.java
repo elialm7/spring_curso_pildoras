@@ -15,6 +15,8 @@ public class UsoAnnotations {
 		
 		System.out.println(elias.getInforme());
 		System.out.println(elias.getTareas());
+		
+		context.close();
 
 	}
 

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+
+	<bean id="miInforme" class="spring.IOC.Informe">
+
+	</bean>
+
+	<bean id="miEmpleado" class="spring.IOC.JefeEmpleado">
+
+		<constructor-arg ref="miInforme"></constructor-arg>
+
+	</bean>
+
+	<bean id="miSecretario" class="spring.IOC.SecretarioEmpleado" scope="prototype">
+
+		<property name="informeNuevo" ref="miInforme"></property>
+		<property name="email" value="micorreo@provider.com"></property>
+		<property name="nombreEmpresa" value="LaEmpresa"></property>
+	</bean>
+	
+	<bean id="miDirector" class="spring.IOC.DirectorEmpleado" 
+	      init-method="init" destroy-method="destroy">
+		<constructor-arg ref="miInforme"></constructor-arg>
+		
+	</bean>
+
+</beans>

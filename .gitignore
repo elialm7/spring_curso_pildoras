@@ -1,2 +1,5 @@
 .metadata/
 Servers/
+/CrudGestion/nbproject/private/
+/CrudGestion/nbbuild/
+/CrudGestion/dist/
